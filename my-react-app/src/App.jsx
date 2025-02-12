@@ -1,20 +1,19 @@
-import { Container } from 'react-bootstrap'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import { Container } from "react-bootstrap";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
       <Header />
-      <main>
+      <main className="py-3">
         <Container>
           <h1>BLUEPRINT</h1>
         </Container>
-
       </main>
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
