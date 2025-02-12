@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
 const Header = () => {
@@ -5,14 +6,18 @@ const Header = () => {
     <header>
       <Navbar expand="lg" className="bg-body-tertiary" collapseOnSelect>
         <Container>
-          <Navbar.Brand href="/">BLUEPRINT</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">
+            BLUEPRINT
+          </Navbar.Brand>
+
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="/cart">
+              <Nav.Link as={Link} to="/cart">
                 <i className="fas fa-shopping-cart"></i> Cart
               </Nav.Link>
-              <Nav.Link href="/login">
+
+              <Nav.Link as={Link} to="/">
                 <i className="fas fa-user"></i> Sign In
               </Nav.Link>
             </Nav>
