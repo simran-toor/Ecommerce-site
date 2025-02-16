@@ -3,6 +3,7 @@ import { config } from "dotenv";
 import products from "./data/products.js";
 import connectDB from "./config/db.js";
 import cors from "cors";
+import colors from "colors";
 
 config();
 
@@ -30,5 +31,5 @@ const PORT = process.env.PORT || 5000;
 
 app.listen(
   PORT,
-  console.log(`server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+  console.log(`server running in ${process.env.NODE_ENV} mode on port ${PORT}`.magenta.bold)
 );
