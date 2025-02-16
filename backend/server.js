@@ -1,28 +1,31 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const products = require("./data/products.jsx");
-const cors = require("cors");
+import express from "express";
+import { config } from "dotenv";
+import products from "./data/products.js";
+import cors from "cors";
 
-dotenv.config()
+config();
 
-const app = express()
+const app = express();
 
 // globally
-app.use(cors())
+app.use(cors());
 
 app.get("/", (req, res) => {
-    res.send("API is running....")
-})
+  res.send("API is running....");
+});
 
 app.get("/api/products", (req, res) => {
-    res.json(products)
-})
+  res.json(products);
+});
 
 app.get("/api/products/:id", (req, res) => {
-    const product = products.find(p => p._id === req.params.id)
-    res.json(product)
-})
+  const product = products.find((p) => p._id === req.params.id);
+  res.json(product);
+});
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, console.log(`server running in ${process.env.NODE_ENV} mode on port ${PORT}`))
+app.listen(
+  PORT,
+  console.log(`server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+);
