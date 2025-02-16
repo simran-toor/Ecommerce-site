@@ -1,12 +1,15 @@
 const express = require("express");
 const products = require("./data/products.jsx");
+const cors = require("cors");
 
 
 const app = express()
 
+// globally
+app.use(cors())
 
 app.get("/", (req, res) => {
-    res.send("API is running...")
+    res.send("API is running....")
 })
 
 app.get("/api/products", (req, res) => {
