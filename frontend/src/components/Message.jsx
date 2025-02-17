@@ -6,7 +6,7 @@ const Message = ({ variant, children }) => {
 
 Message.propTypes = {
   variant: "info",
-  children: String,
+// children: String,
 };
 
 export default Message;
